@@ -33,6 +33,8 @@
         "gestures.jres",
         "control.ts",
         "control.cpp",
+        "controlInternal.cpp",
+        "eventContext.ts",
         "controlgc.cpp",
         "perfcounters.ts",
         "interval.ts",

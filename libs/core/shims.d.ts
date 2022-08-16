@@ -495,6 +495,14 @@ declare namespace control {
 declare namespace control {
 
     /**
+     * Used internally
+     */
+    //% flags.defl=16 shim=control::internalOnEvent
+    function internalOnEvent(src: int32, value: int32, handler: () => void, flags?: int32): void;
+}
+declare namespace control {
+
+    /**
      * Force GC and dump basic information about heap.
      */
     //% shim=control::gc
