@@ -20,7 +20,6 @@
         "libs/core---nrf52",
         "libs/hw",
         "libs/hw---n3",
-        "libs/game",
         "libs/game---light",
         "libs/screen",
         "libs/screen---st7735"
