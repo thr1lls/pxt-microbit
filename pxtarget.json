@@ -189,35 +189,6 @@
                 "dockerImage": "pext/yotta:latest",
                 "yottaConfigCompatibility": true
             }
-        },
-        "nrf52833": {
-            "compile": {
-                "hasHex": true,
-                "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/nrf52.cfg]",
-                "webUSB": false,
-                "useUF2": false,
-                "flashEnd": 524288,
-                "deployDrives": ".*",
-                "deployFileMarker": "DETAILS.TXT"
-            },
-            "compileService": {
-                "codalTarget": {
-                    "name": "codal-nrf52833-dk",
-                    "url": "https://github.com/mmoskal/codal-nrf52833-dk",
-                    "branch": "v1.1.4",
-                    "type": "git"
-                },
-                "codalBinary": "NRF52840_DK",
-                "serviceId": "codal2nrf52840",
-                "dockerImage": "pext/yotta:latest",
-                "yottaConfig": {
-                    "pxt": {
-                        "board": {
-                            "id": "BOARD_ID_NRF52833"
-                        }
-                    }
-                }
-            }
         }
     },
     "runtime": {
