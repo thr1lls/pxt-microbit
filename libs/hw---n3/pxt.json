@@ -15,7 +15,7 @@
     },
     "compileServiceVariant": "mbcodal",
     "dependencies": {
-        "core---nrf52": "file:../core---nrf52",
+        "core": "file:../core",
         "screen---st7735": "file:../screen---st7735",
         "game---light": "file:../game---light"    
     },
@@ -31,6 +31,9 @@
             "DEVICE_WEBUSB": 0
         }
     },
+    "disablesVariants": [
+        "mbdal"
+    ],
     "experimentalHw": true,
     "dalDTS": {
         "corePackage": "../core---nrf52"

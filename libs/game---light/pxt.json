@@ -1,5 +1,8 @@
 {
     "additionalFilePath": "../../node_modules/pxt-common-packages/libs/game---light",
+    "disablesVariants": [
+        "mbdal"
+    ],
     "files": [
         "compat.ts",
         "console.ts",
