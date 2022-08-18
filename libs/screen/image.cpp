@@ -1,5 +1,6 @@
 #include "pxt.h"
 
+#define IMAGE_BITS 4
 #if IMAGE_BITS == 1
 // OK
 #elif IMAGE_BITS == 4
@@ -13,41 +14,41 @@
 
 namespace pxt {
 
-PXT_VTABLE(RefImageGG, ValType::Object)
+PXT_VTABLE(RefImage, ValType::Object)
 
-void RefImageG::destroy(RefImageG *t) {}
+void RefImage::destroy(RefImage *t) {}
 
-void RefImageG::print(RefImageG *t) {
-    DMESG("RefImageG %p size=%d x %d", t, t->width(), t->height());
+void RefImage::print(RefImage *t) {
+    DMESG("RefImage %p size=%d x %d", t, t->width(), t->height());
 }
 
-int RefImageG::wordHeight() {
+int RefImage::wordHeight() {
     if (bpp() == 1)
         oops(20);
     return ((height() * 4 + 31) >> 5);
 }
 
-void RefImageG::makeWritable() {
+void RefImage::makeWritable() {
     ++revision;
     if (buffer->isReadOnly()) {
         buffer = mkBuffer(data(), length());
     }
 }
 
-uint8_t RefImageG::fillMask(color c) {
+uint8_t RefImage::fillMask(color c) {
     return this->bpp() == 1 ? (c & 1) * 0xff : 0x11 * (c & 0xf);
 }
 
-bool RefImageG::inRange(int x, int y) {
+bool RefImage::inRange(int x, int y) {
     return 0 <= x && x < width() && 0 <= y && y < height();
 }
 
-void RefImageG::clamp(int *x, int *y) {
+void RefImage::clamp(int *x, int *y) {
     *x = min(max(*x, 0), width() - 1);
     *y = min(max(*y, 0), height() - 1);
 }
 
-RefImageG::RefImageG(BoxedBuffer *buf) : PXT_VTABLE_INIT(RefImageG), buffer(buf) {
+RefImage::RefImage(BoxedBuffer *buf) : PXT_VTABLE_INIT(RefImage), buffer(buf) {
     revision = 0;
     if (!buf)
         oops(21);
@@ -63,7 +64,7 @@ static inline int byteSize(int w, int h, int bpp) {
 ImageG_ allocImage(const uint8_t *data, uint32_t sz) {
     auto buf = mkBuffer(data, sz);
     registerGCObj(buf);
-    ImageG_ r = NEW_GC(RefImageG, buf);
+    ImageG_ r = NEW_GC(RefImage, buf);
     unregisterGCObj(buf);
     return r;
 }
@@ -871,7 +872,7 @@ bool overlapsWith(ImageG_ img, ImageG_ other, int x, int y) {
 
 ImageG_ convertAndWrap(Buffer buf) {
     if (isValidImage(buf))
-        return NEW_GC(RefImageG, buf);
+        return NEW_GC(RefImage, buf);
 
     // What follows in this function is mostly dead code, except if people construct image buffers
     // by hand. Probably safe to remove in a year (middle of 2020) or so. When removing, also remove
@@ -890,7 +891,7 @@ ImageG_ convertAndWrap(Buffer buf) {
     memcpy(hd->pixels, src + 4, buf->length - 4);
 
     registerGCObj(tmp);
-    auto r = NEW_GC(RefImageG, tmp);
+    auto r = NEW_GC(RefImage, tmp);
     unregisterGCObj(tmp);
     return r;
 }
@@ -1191,7 +1192,7 @@ Buffer doubledIcon(Buffer icon) {
     if (!isValidImage(icon))
         return NULL;
 
-    auto r = NEW_GC(RefImageG, icon);
+    auto r = NEW_GC(RefImage, icon);
     registerGCObj(r);
     auto t = ImageGMethods::doubled(r);
     unregisterGCObj(r);
