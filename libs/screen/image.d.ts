@@ -60,7 +60,7 @@ interface ImageG {
     //% shim=ImageGMethods::clone blockNamespace="images" group="Create"
     //% block="clone %picture=variables_get"
     //% help=images/image/clone
-    clone(): Image;
+    clone(): ImageG;
 
     /**
      * Flips (mirrors) pixels horizontally in the current image
@@ -103,7 +103,7 @@ interface ImageG {
     //% this.shadow=variables_get
     //% this.defl="picture"
     //% other.shadow=screen_image_picker
-    equals(other: Image): boolean;
+    equals(other: ImageG): boolean;
 
     //% shim=ImageGMethods::isStatic
     isStatic(): boolean;

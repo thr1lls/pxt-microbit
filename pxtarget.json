@@ -17,9 +17,9 @@
         "libs/flashlog",
         "libs/datalogger",
         "libs/color",
-        "libs/game---light",
         "libs/screen",
         "libs/screen---st7735",
+        "libs/game---light",
         "libs/hw",
         "libs/hw---n3"
     ],

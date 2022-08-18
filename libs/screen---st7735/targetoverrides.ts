@@ -3,7 +3,7 @@
  */
 //% shim=@f4 helper=image::ofBuffer blockIdentity="images._spriteImage"
 //% groups=["0.","1#","2T","3t","4N","5n","6G","7g","8","9","aAR","bBP","cCp","dDO","eEY","fFW"]
-function img(lits: any, ...args: any[]): Image { return null }
+function img(lits: any, ...args: any[]): ImageG { return null }
 
 // set palette before creating screen, so the JS version has the right BPP
 image.setPalette(hex`__palette`)
@@ -17,12 +17,12 @@ namespace image {
 
 namespace _screen_internal {
     //% shim=pxt::updateScreen
-    function updateScreen(img: Image): void { }
+    function updateScreen(img: ImageG): void { }
     //% shim=pxt::updateStats
     function updateStats(msg: string): void { }
 
     //% shim=pxt::updateScreenStatusBar
-    function updateScreenStatusBar(img: Image): void { return }
+    function updateScreenStatusBar(img: ImageG): void { return }
     //% shim=pxt::setupScreenStatusBar
     function setupScreenStatusBar(barHeight: number): void { return }
 
