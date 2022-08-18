@@ -17,7 +17,6 @@
         "libs/flashlog",
         "libs/datalogger",
         "libs/color",
-        "libs/core---nrf52",
         "libs/game---light",
         "libs/screen",
         "libs/screen---st7735",
