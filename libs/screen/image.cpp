@@ -14,6 +14,7 @@
 
 namespace pxt {
 
+// TBALL: is this going to cause problems in context of micro:bit?
 PXT_VTABLE(RefImage, ValType::Object)
 
 void RefImage::destroy(RefImage *t) {}
