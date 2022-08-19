@@ -14,7 +14,8 @@ void debuglog(const char *format, ...);
 #define xmalloc malloc
 #define xfree free
 
-#define GC_MAX_ALLOC_SIZE 9000
+// #define GC_MAX_ALLOC_SIZE 9000
+#define GC_MAX_ALLOC_SIZE (128 * 1024)
 
 #define NON_GC_HEAP_RESERVATION 1024
 
