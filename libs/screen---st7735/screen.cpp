@@ -22,7 +22,7 @@ class WDisplay {
     bool inUpdate;
 
     uint8_t *screenBuf;
-    Image_ lastStatus;
+    ImageG_ lastStatus;
 
     uint16_t width, height;
     uint16_t displayHeight;
@@ -299,7 +299,7 @@ void setupScreenStatusBar(int barHeight) {
 }
 
 //%
-void updateScreenStatusBar(Image_ img) {
+void updateScreenStatusBar(ImageG_ img) {
     auto display = getWDisplay();
     if (!display)
         return;
@@ -310,7 +310,7 @@ void updateScreenStatusBar(Image_ img) {
 }
 
 //%
-void updateScreen(Image_ img) {
+void updateScreen(ImageG_ img) {
     auto display = getWDisplay();
     if (!display)
         return;
