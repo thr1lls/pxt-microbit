@@ -1,449 +1,3 @@
-Using library: codal-microbit-v2
-Using library: codal-core
-Using library: codal-nrf52
-Using library: codal-microbit-nrf5sdk
-/home/build/prjclone/libraries/codal-core/source/core/CodalDmesg.cpp: In function 'void logwriten(const char*, int)':
-/home/build/prjclone/libraries/codal-core/source/core/CodalDmesg.cpp:45:36: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-         *(uint32_t *)codalLogStore.buffer = 0x0a2e2e2e; // "...\n"
-                                    ^~~~~~
-/tmp/ccq0lCqL.s: Assembler messages:
-/tmp/ccq0lCqL.s:110: Warning: setting incorrect section attributes for .data.ramfuncs
-/home/build/prjclone/pxtapp/pointers.cpp:365:15: error: 'ImageG_' was not declared in this scope
-     int width(ImageG_ img);
-               ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:366:16: error: 'ImageG_' was not declared in this scope
-     int height(ImageG_ img);
-                ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:367:17: error: 'ImageG_' was not declared in this scope
-     bool isMono(ImageG_ img);
-                 ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:368:19: error: 'ImageG_' was not declared in this scope
-     bool isStatic(ImageG_ img);
-                   ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:369:19: error: 'ImageG_' was not declared in this scope
-     bool revision(ImageG_ img);
-                   ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:370:19: error: variable or field 'copyFrom' declared void
-     void copyFrom(ImageG_ img, ImageG_ from);
-                   ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:370:19: error: 'ImageG_' was not declared in this scope
-/home/build/prjclone/pxtapp/pointers.cpp:370:32: error: 'ImageG_' was not declared in this scope
-     void copyFrom(ImageG_ img, ImageG_ from);
-                                ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:371:19: error: variable or field 'setPixel' declared void
-     void setPixel(ImageG_ img, int x, int y, int c);
-                   ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:371:19: error: 'ImageG_' was not declared in this scope
-/home/build/prjclone/pxtapp/pointers.cpp:371:32: error: expected primary-expression before 'int'
-     void setPixel(ImageG_ img, int x, int y, int c);
-                                ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:371:39: error: expected primary-expression before 'int'
-     void setPixel(ImageG_ img, int x, int y, int c);
-                                       ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:371:46: error: expected primary-expression before 'int'
-     void setPixel(ImageG_ img, int x, int y, int c);
-                                              ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:372:18: error: 'ImageG_' was not declared in this scope
-     int getPixel(ImageG_ img, int x, int y);
-                  ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:372:31: error: expected primary-expression before 'int'
-     int getPixel(ImageG_ img, int x, int y);
-                               ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:372:38: error: expected primary-expression before 'int'
-     int getPixel(ImageG_ img, int x, int y);
-                                      ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:372:43: error: expression list treated as compound expression in initializer [-fpermissive]
-     int getPixel(ImageG_ img, int x, int y);
-                                           ^
-/home/build/prjclone/pxtapp/pointers.cpp:373:15: error: variable or field 'fill' declared void
-     void fill(ImageG_ img, int c);
-               ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:373:15: error: 'ImageG_' was not declared in this scope
-/home/build/prjclone/pxtapp/pointers.cpp:373:28: error: expected primary-expression before 'int'
-     void fill(ImageG_ img, int c);
-                            ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:374:18: error: variable or field 'getRows' declared void
-     void getRows(ImageG_ img, int x, Buffer dst);
-                  ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:374:18: error: 'ImageG_' was not declared in this scope
-/home/build/prjclone/pxtapp/pointers.cpp:374:31: error: expected primary-expression before 'int'
-     void getRows(ImageG_ img, int x, Buffer dst);
-                               ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:374:45: error: expected primary-expression before 'dst'
-     void getRows(ImageG_ img, int x, Buffer dst);
-                                             ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:375:18: error: variable or field 'setRows' declared void
-     void setRows(ImageG_ img, int x, Buffer src);
-                  ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:375:18: error: 'ImageG_' was not declared in this scope
-/home/build/prjclone/pxtapp/pointers.cpp:375:31: error: expected primary-expression before 'int'
-     void setRows(ImageG_ img, int x, Buffer src);
-                               ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:375:45: error: expected primary-expression before 'src'
-     void setRows(ImageG_ img, int x, Buffer src);
-                                             ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:376:20: error: variable or field '_fillRect' declared void
-     void _fillRect(ImageG_ img, int xy, int wh, int c);
-                    ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:376:20: error: 'ImageG_' was not declared in this scope
-/home/build/prjclone/pxtapp/pointers.cpp:376:33: error: expected primary-expression before 'int'
-     void _fillRect(ImageG_ img, int xy, int wh, int c);
-                                 ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:376:41: error: expected primary-expression before 'int'
-     void _fillRect(ImageG_ img, int xy, int wh, int c);
-                                         ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:376:49: error: expected primary-expression before 'int'
-     void _fillRect(ImageG_ img, int xy, int wh, int c);
-                                                 ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:377:19: error: variable or field '_mapRect' declared void
-     void _mapRect(ImageG_ img, int xy, int wh, Buffer c);
-                   ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:377:19: error: 'ImageG_' was not declared in this scope
-/home/build/prjclone/pxtapp/pointers.cpp:377:32: error: expected primary-expression before 'int'
-     void _mapRect(ImageG_ img, int xy, int wh, Buffer c);
-                                ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:377:40: error: expected primary-expression before 'int'
-     void _mapRect(ImageG_ img, int xy, int wh, Buffer c);
-                                        ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:377:55: error: expected primary-expression before 'c'
-     void _mapRect(ImageG_ img, int xy, int wh, Buffer c);
-                                                       ^
-/home/build/prjclone/pxtapp/pointers.cpp:378:17: error: 'ImageG_' was not declared in this scope
-     bool equals(ImageG_ img, ImageG_ other);
-                 ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:378:30: error: 'ImageG_' was not declared in this scope
-     bool equals(ImageG_ img, ImageG_ other);
-                              ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:378:43: error: expression list treated as compound expression in initializer [-fpermissive]
-     bool equals(ImageG_ img, ImageG_ other);
-                                           ^
-/home/build/prjclone/pxtapp/pointers.cpp:379:5: error: 'ImageG_' does not name a type
-     ImageG_ clone(ImageG_ img);
-     ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:380:16: error: variable or field 'flipX' declared void
-     void flipX(ImageG_ img);
-                ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:380:16: error: 'ImageG_' was not declared in this scope
-/home/build/prjclone/pxtapp/pointers.cpp:381:16: error: variable or field 'flipY' declared void
-     void flipY(ImageG_ img);
-                ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:381:16: error: 'ImageG_' was not declared in this scope
-/home/build/prjclone/pxtapp/pointers.cpp:382:5: error: 'ImageG_' does not name a type
-     ImageG_ transposed(ImageG_ img);
-     ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:383:17: error: variable or field 'scroll' declared void
-     void scroll(ImageG_ img, int dx, int dy);
-                 ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:383:17: error: 'ImageG_' was not declared in this scope
-/home/build/prjclone/pxtapp/pointers.cpp:383:30: error: expected primary-expression before 'int'
-     void scroll(ImageG_ img, int dx, int dy);
-                              ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:383:38: error: expected primary-expression before 'int'
-     void scroll(ImageG_ img, int dx, int dy);
-                                      ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:384:5: error: 'ImageG_' does not name a type
-     ImageG_ doubledX(ImageG_ img);
-     ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:385:5: error: 'ImageG_' does not name a type
-     ImageG_ doubledY(ImageG_ img);
-     ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:386:18: error: variable or field 'replace' declared void
-     void replace(ImageG_ img, int from, int to);
-                  ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:386:18: error: 'ImageG_' was not declared in this scope
-/home/build/prjclone/pxtapp/pointers.cpp:386:31: error: expected primary-expression before 'int'
-     void replace(ImageG_ img, int from, int to);
-                               ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:386:41: error: expected primary-expression before 'int'
-     void replace(ImageG_ img, int from, int to);
-                                         ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:387:5: error: 'ImageG_' does not name a type
-     ImageG_ doubled(ImageG_ img);
-     ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:388:20: error: variable or field 'drawImage' declared void
-     void drawImage(ImageG_ img, ImageG_ from, int x, int y);
-                    ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:388:20: error: 'ImageG_' was not declared in this scope
-/home/build/prjclone/pxtapp/pointers.cpp:388:33: error: 'ImageG_' was not declared in this scope
-     void drawImage(ImageG_ img, ImageG_ from, int x, int y);
-                                 ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:388:47: error: expected primary-expression before 'int'
-     void drawImage(ImageG_ img, ImageG_ from, int x, int y);
-                                               ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:388:54: error: expected primary-expression before 'int'
-     void drawImage(ImageG_ img, ImageG_ from, int x, int y);
-                                                      ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:389:31: error: variable or field 'drawTransparentImage' declared void
-     void drawTransparentImage(ImageG_ img, ImageG_ from, int x, int y);
-                               ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:389:31: error: 'ImageG_' was not declared in this scope
-/home/build/prjclone/pxtapp/pointers.cpp:389:44: error: 'ImageG_' was not declared in this scope
-     void drawTransparentImage(ImageG_ img, ImageG_ from, int x, int y);
-                                            ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:389:58: error: expected primary-expression before 'int'
-     void drawTransparentImage(ImageG_ img, ImageG_ from, int x, int y);
-                                                          ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:389:65: error: expected primary-expression before 'int'
-     void drawTransparentImage(ImageG_ img, ImageG_ from, int x, int y);
-                                                                 ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:390:23: error: 'ImageG_' was not declared in this scope
-     bool overlapsWith(ImageG_ img, ImageG_ other, int x, int y);
-                       ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:390:36: error: 'ImageG_' was not declared in this scope
-     bool overlapsWith(ImageG_ img, ImageG_ other, int x, int y);
-                                    ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:390:51: error: expected primary-expression before 'int'
-     bool overlapsWith(ImageG_ img, ImageG_ other, int x, int y);
-                                                   ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:390:58: error: expected primary-expression before 'int'
-     bool overlapsWith(ImageG_ img, ImageG_ other, int x, int y);
-                                                          ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:390:63: error: expression list treated as compound expression in initializer [-fpermissive]
-     bool overlapsWith(ImageG_ img, ImageG_ other, int x, int y);
-                                                               ^
-/home/build/prjclone/pxtapp/pointers.cpp:391:20: error: variable or field '_drawIcon' declared void
-     void _drawIcon(ImageG_ img, Buffer icon, int xy, int c);
-                    ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:391:20: error: 'ImageG_' was not declared in this scope
-/home/build/prjclone/pxtapp/pointers.cpp:391:40: error: expected primary-expression before 'icon'
-     void _drawIcon(ImageG_ img, Buffer icon, int xy, int c);
-                                        ^~~~
-/home/build/prjclone/pxtapp/pointers.cpp:391:46: error: expected primary-expression before 'int'
-     void _drawIcon(ImageG_ img, Buffer icon, int xy, int c);
-                                              ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:391:54: error: expected primary-expression before 'int'
-     void _drawIcon(ImageG_ img, Buffer icon, int xy, int c);
-                                                      ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:392:20: error: variable or field '_drawLine' declared void
-     void _drawLine(ImageG_ img, int xy, int wh, int c);
-                    ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:392:20: error: 'ImageG_' was not declared in this scope
-/home/build/prjclone/pxtapp/pointers.cpp:392:33: error: expected primary-expression before 'int'
-     void _drawLine(ImageG_ img, int xy, int wh, int c);
-                                 ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:392:41: error: expected primary-expression before 'int'
-     void _drawLine(ImageG_ img, int xy, int wh, int c);
-                                         ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:392:49: error: expected primary-expression before 'int'
-     void _drawLine(ImageG_ img, int xy, int wh, int c);
-                                                 ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:393:19: error: variable or field '_blitRow' declared void
-     void _blitRow(ImageG_ img, int xy, ImageG_ from, int xh);
-                   ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:393:19: error: 'ImageG_' was not declared in this scope
-/home/build/prjclone/pxtapp/pointers.cpp:393:32: error: expected primary-expression before 'int'
-     void _blitRow(ImageG_ img, int xy, ImageG_ from, int xh);
-                                ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:393:40: error: 'ImageG_' was not declared in this scope
-     void _blitRow(ImageG_ img, int xy, ImageG_ from, int xh);
-                                        ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:393:54: error: expected primary-expression before 'int'
-     void _blitRow(ImageG_ img, int xy, ImageG_ from, int xh);
-                                                      ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:394:16: error: 'ImageG_' was not declared in this scope
-     bool _blit(ImageG_ img, ImageG_ src, pxt::RefCollection *args);
-                ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:394:29: error: 'ImageG_' was not declared in this scope
-     bool _blit(ImageG_ img, ImageG_ src, pxt::RefCollection *args);
-                             ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:394:61: error: expected primary-expression before '*' token
-     bool _blit(ImageG_ img, ImageG_ src, pxt::RefCollection *args);
-                                                             ^
-/home/build/prjclone/pxtapp/pointers.cpp:394:62: error: 'args' was not declared in this scope
-     bool _blit(ImageG_ img, ImageG_ src, pxt::RefCollection *args);
-                                                              ^~~~
-/home/build/prjclone/pxtapp/pointers.cpp:394:66: error: expression list treated as compound expression in initializer [-fpermissive]
-     bool _blit(ImageG_ img, ImageG_ src, pxt::RefCollection *args);
-                                                                  ^
-/home/build/prjclone/pxtapp/pointers.cpp:395:22: error: variable or field '_fillCircle' declared void
-     void _fillCircle(ImageG_ img, int cxy, int r, int c);
-                      ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:395:22: error: 'ImageG_' was not declared in this scope
-/home/build/prjclone/pxtapp/pointers.cpp:395:35: error: expected primary-expression before 'int'
-     void _fillCircle(ImageG_ img, int cxy, int r, int c);
-                                   ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:395:44: error: expected primary-expression before 'int'
-     void _fillCircle(ImageG_ img, int cxy, int r, int c);
-                                            ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:395:51: error: expected primary-expression before 'int'
-     void _fillCircle(ImageG_ img, int cxy, int r, int c);
-                                                   ^~~
-/home/build/prjclone/pxtapp/pointers.cpp:398:5: error: 'ImageG_' does not name a type
-     ImageG_ create(int width, int height);
-     ^~~~~~~
-/home/build/prjclone/pxtapp/pointers.cpp:399:5: error: 'ImageG_' does not name a type
-     ImageG_ ofBuffer(Buffer buf);
-     ^~~~~~~
-In file included from /home/build/prjclone/pxtapp/pxt.h:8:0,
-                 from /home/build/prjclone/pxtapp/pointers.cpp:1:
-/home/build/prjclone/pxtapp/pointers.cpp:737:11: error: 'copyFrom' is not a member of 'ImageGMethods'
- PXT_FNPTR(::ImageGMethods::copyFrom),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:738:11: error: 'setPixel' is not a member of 'ImageGMethods'
- PXT_FNPTR(::ImageGMethods::setPixel),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:738:11: note: suggested alternative:
- PXT_FNPTR(::ImageGMethods::setPixel),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:147:10: note:   'ImageMethods::setPixel'
-     void setPixel(Image i, int x, int y, bool value);
-          ^~~~~~~~
-In file included from /home/build/prjclone/pxtapp/pxt.h:8:0,
-                 from /home/build/prjclone/pxtapp/pointers.cpp:1:
-/home/build/prjclone/pxtapp/pointers.cpp:740:11: error: 'fill' is not a member of 'ImageGMethods'
- PXT_FNPTR(::ImageGMethods::fill),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:740:11: note: suggested alternative:
- PXT_FNPTR(::ImageGMethods::fill),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:299:10: note:   'BufferMethods::fill'
-     void fill(Buffer buf, int value, int offset = 0, int length = -1);
-          ^~~~
-In file included from /home/build/prjclone/pxtapp/pxt.h:8:0,
-                 from /home/build/prjclone/pxtapp/pointers.cpp:1:
-/home/build/prjclone/pxtapp/pointers.cpp:741:11: error: 'getRows' is not a member of 'ImageGMethods'
- PXT_FNPTR(::ImageGMethods::getRows),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:742:11: error: 'setRows' is not a member of 'ImageGMethods'
- PXT_FNPTR(::ImageGMethods::setRows),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:743:11: error: '_fillRect' is not a member of 'ImageGMethods'
- PXT_FNPTR(::ImageGMethods::_fillRect),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:744:11: error: '_mapRect' is not a member of 'ImageGMethods'
- PXT_FNPTR(::ImageGMethods::_mapRect),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:746:11: error: 'clone' is not a member of 'ImageGMethods'
- PXT_FNPTR(::ImageGMethods::clone),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:747:11: error: 'flipX' is not a member of 'ImageGMethods'
- PXT_FNPTR(::ImageGMethods::flipX),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:748:11: error: 'flipY' is not a member of 'ImageGMethods'
- PXT_FNPTR(::ImageGMethods::flipY),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:749:11: error: 'transposed' is not a member of 'ImageGMethods'
- PXT_FNPTR(::ImageGMethods::transposed),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:750:11: error: 'scroll' is not a member of 'ImageGMethods'
- PXT_FNPTR(::ImageGMethods::scroll),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:751:11: error: 'doubledX' is not a member of 'ImageGMethods'
- PXT_FNPTR(::ImageGMethods::doubledX),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:752:11: error: 'doubledY' is not a member of 'ImageGMethods'
- PXT_FNPTR(::ImageGMethods::doubledY),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:753:11: error: 'replace' is not a member of 'ImageGMethods'
- PXT_FNPTR(::ImageGMethods::replace),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:754:11: error: 'doubled' is not a member of 'ImageGMethods'
- PXT_FNPTR(::ImageGMethods::doubled),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:755:11: error: 'drawImage' is not a member of 'ImageGMethods'
- PXT_FNPTR(::ImageGMethods::drawImage),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:756:11: error: 'drawTransparentImage' is not a member of 'ImageGMethods'
- PXT_FNPTR(::ImageGMethods::drawTransparentImage),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:758:11: error: '_drawIcon' is not a member of 'ImageGMethods'
- PXT_FNPTR(::ImageGMethods::_drawIcon),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:759:11: error: '_drawLine' is not a member of 'ImageGMethods'
- PXT_FNPTR(::ImageGMethods::_drawLine),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:760:11: error: '_blitRow' is not a member of 'ImageGMethods'
- PXT_FNPTR(::ImageGMethods::_blitRow),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:762:11: error: '_fillCircle' is not a member of 'ImageGMethods'
- PXT_FNPTR(::ImageGMethods::_fillCircle),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:763:11: error: 'create' is not a member of 'image'
- PXT_FNPTR(::image::create),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-/home/build/prjclone/pxtapp/pointers.cpp:764:11: error: 'ofBuffer' is not a member of 'image'
- PXT_FNPTR(::image::ofBuffer),
-           ^
-/home/build/prjclone/pxtapp/pxtbase.h:1207:42: note: in definition of macro 'PXT_FNPTR'
- #define PXT_FNPTR(x) (uintptr_t)(void *)(x)
-                                          ^
-make[2]: *** [CMakeFiles/MICROBIT.dir/pxtapp/pointers.cpp.o] Error 1
-make[2]: *** Waiting for unfinished jobs....
 In file included from /home/build/prjclone/libraries/codal-microbit-nrf5sdk/nRF5SDK/components/libraries/util/sdk_common.h:61:0,
                  from /home/build/prjclone/libraries/codal-microbit-nrf5sdk/nRF5SDK_mods/nrf_sdh_soc.h:53,
                  from /home/build/prjclone/pxtapp/settings/NRF52Flash.cpp:15:
@@ -455,51 +9,6 @@ In file included from /home/build/prjclone/pxtapp/pxt.h:8:0,
 /home/build/prjclone/pxtapp/pxtbase.h:71:0: note: this is the location of the previous definition
  #define STATIC_ASSERT(e) enum { CONCAT_0(_static_assert_, __LINE__) = 1 / ((e) ? 1 : 0) };
 
-/home/build/prjclone/pxtapp/screen---st7735/image.cpp:65:1: error: 'ImageG_' does not name a type
- ImageG_ allocImage(const uint8_t *data, uint32_t sz) {
- ^~~~~~~
-/home/build/prjclone/pxtapp/screen---st7735/image.cpp:73:1: error: 'ImageG_' does not name a type
- ImageG_ mkImage(int width, int height, int bpp) {
- ^~~~~~~
-/home/build/prjclone/pxtapp/screen---st7735/image.cpp:127:11: error: 'ImageG_' was not declared in this scope
- int width(ImageG_ img) {
-           ^~~~~~~
-/home/build/prjclone/pxtapp/screen---st7735/image.cpp:135:12: error: 'ImageG_' was not declared in this scope
- int height(ImageG_ img) {
-            ^~~~~~~
-/home/build/prjclone/pxtapp/screen---st7735/image.cpp:143:13: error: 'ImageG_' was not declared in this scope
- bool isMono(ImageG_ img) {
-             ^~~~~~~
-/home/build/prjclone/pxtapp/screen---st7735/image.cpp:148:15: error: 'ImageG_' was not declared in this scope
- bool isStatic(ImageG_ img) {
-               ^~~~~~~
-/home/build/prjclone/pxtapp/screen---st7735/image.cpp:153:15: error: 'ImageG_' was not declared in this scope
- bool revision(ImageG_ img) {
-               ^~~~~~~
-/home/build/prjclone/pxtapp/screen---st7735/image.cpp:162:15: error: variable or field 'copyFrom' declared void
- void copyFrom(ImageG_ img, ImageG_ from) {
-               ^~~~~~~
-/home/build/prjclone/pxtapp/screen---st7735/image.cpp:162:15: error: 'ImageG_' was not declared in this scope
-/home/build/prjclone/pxtapp/screen---st7735/image.cpp:162:28: error: 'ImageG_' was not declared in this scope
- void copyFrom(ImageG_ img, ImageG_ from) {
-                            ^~~~~~~
-/home/build/prjclone/pxtapp/screen---st7735/image.cpp:170:21: error: variable or field 'setCore' declared void
- static void setCore(ImageG_ img, int x, int y, int c) {
-                     ^~~~~~~
-/home/build/prjclone/pxtapp/screen---st7735/image.cpp:170:21: error: 'ImageG_' was not declared in this scope
-/home/build/prjclone/pxtapp/screen---st7735/image.cpp:170:34: error: expected primary-expression before 'int'
- static void setCore(ImageG_ img, int x, int y, int c) {
-                                  ^~~
-/home/build/prjclone/pxtapp/screen---st7735/image.cpp:170:41: error: expected primary-expression before 'int'
- static void setCore(ImageG_ img, int x, int y, int c) {
-                                         ^~~
-/home/build/prjclone/pxtapp/screen---st7735/image.cpp:170:48: error: expected primary-expression before 'int'
- static void setCore(ImageG_ img, int x, int y, int c) {
-                                                ^~~
-/home/build/prjclone/pxtapp/screen---st7735/image.cpp:1255:1: error: expected '}' at end of input
- }
- ^
-make[2]: *** [CMakeFiles/MICROBIT.dir/pxtapp/screen---st7735/image.cpp.o] Error 1
 /home/build/prjclone/pxtapp/screen---st7735/jddisplay.cpp: In member function 'void pxt::JDDisplay::handleIncoming(jd_packet_t*)':
 /home/build/prjclone/pxtapp/screen---st7735/jddisplay.cpp:160:52: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
              soundBufferPending = *(uint32_t *)pkt->data;
@@ -513,6 +22,14 @@ make[2]: *** [CMakeFiles/MICROBIT.dir/pxtapp/screen---st7735/image.cpp.o] Error 
 /home/build/prjclone/pxtapp/screen---st7735/jddisplay.cpp:172:45: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
              screenWidth = *(uint16_t *)pkt->data;
                                              ^~~~
+/home/build/prjclone/pxtapp/screen---st7735/jddisplay.cpp:208:27: error: 'PXT_INTERNAL_KEY_DOWN' was not declared in this scope
+                     Event(PXT_INTERNAL_KEY_DOWN, i);
+                           ^~~~~~~~~~~~~~~~~~~~~
+/home/build/prjclone/pxtapp/screen---st7735/jddisplay.cpp:210:27: error: 'PXT_INTERNAL_KEY_UP' was not declared in this scope
+                     Event(PXT_INTERNAL_KEY_UP, i);
+                           ^~~~~~~~~~~~~~~~~~~
+make[2]: *** [CMakeFiles/MICROBIT.dir/pxtapp/screen---st7735/jddisplay.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
 /home/build/prjclone/pxtapp/screen---st7735/panic.cpp: In member function 'void _pxt_panic::ST7735::init()':
 /home/build/prjclone/pxtapp/screen---st7735/panic.cpp:191:23: error: 'DISPLAY_MOSI' was not declared in this scope
      mosi = LOOKUP_PIN(DISPLAY_MOSI);
@@ -553,6 +70,7 @@ make[2]: *** [CMakeFiles/MICROBIT.dir/pxtapp/screen---st7735/image.cpp.o] Error 
 /home/build/prjclone/pxtapp/screen---st7735/screen.cpp:45:32: error: 'DISPLAY_MISO' was not declared in this scope
          auto miso = LOOKUP_PIN(DISPLAY_MISO);
                                 ^~~~~~~~~~~~
+make[2]: *** [CMakeFiles/MICROBIT.dir/pxtapp/screen---st7735/panic.cpp.o] Error 1
 /home/build/prjclone/pxtapp/screen---st7735/screen.cpp:45:44: error: 'LOOKUP_PIN' was not declared in this scope
          auto miso = LOOKUP_PIN(DISPLAY_MISO);
                                             ^
@@ -599,22 +117,16 @@ make[2]: *** [CMakeFiles/MICROBIT.dir/pxtapp/screen---st7735/image.cpp.o] Error 
 /home/build/prjclone/pxtapp/screen---st7735/screen.cpp:158:38: error: 'disableButtonMultiplexer' was not declared in this scope
              disableButtonMultiplexer();
                                       ^
-/home/build/prjclone/pxtapp/screen---st7735/jddisplay.cpp:208:27: error: 'PXT_INTERNAL_KEY_DOWN' was not declared in this scope
-                     Event(PXT_INTERNAL_KEY_DOWN, i);
-                           ^~~~~~~~~~~~~~~~~~~~~
-/home/build/prjclone/pxtapp/screen---st7735/jddisplay.cpp:210:27: error: 'PXT_INTERNAL_KEY_UP' was not declared in this scope
-                     Event(PXT_INTERNAL_KEY_UP, i);
-                           ^~~~~~~~~~~~~~~~~~~
 In file included from /home/build/prjclone/pxtapp/pxt.h:8:0,
                  from /home/build/prjclone/pxtapp/screen---st7735/screen.cpp:1:
 /home/build/prjclone/pxtapp/screen---st7735/screen.cpp: In function 'pxt::WDisplay* pxt::getWDisplay()':
 /home/build/prjclone/pxtapp/screen---st7735/screen.cpp:222:28: error: 'DISPLAY_MOSI' was not declared in this scope
  SINGLETON_IF_PIN(WDisplay, DISPLAY_MOSI);
                             ^
-/home/build/prjclone/pxtapp/pxtbase.h:1225:50: note: in definition of macro 'SINGLETON_IF_PIN'
+/home/build/prjclone/pxtapp/pxtbase.h:1226:50: note: in definition of macro 'SINGLETON_IF_PIN'
          if (!JOIN(inst, ClassName) && LOOKUP_PIN(pin))                                             \
                                                   ^~~
-/home/build/prjclone/pxtapp/pxtbase.h:1225:53: error: 'LOOKUP_PIN' was not declared in this scope
+/home/build/prjclone/pxtapp/pxtbase.h:1226:53: error: 'LOOKUP_PIN' was not declared in this scope
          if (!JOIN(inst, ClassName) && LOOKUP_PIN(pin))                                             \
                                                      ^
 /home/build/prjclone/pxtapp/screen---st7735/screen.cpp:222:1: note: in expansion of macro 'SINGLETON_IF_PIN'
@@ -634,8 +146,5 @@ In file included from /home/build/prjclone/pxtapp/pxt.h:8:0,
 /home/build/prjclone/pxtapp/screen---st7735/screen.cpp:258:36: error: 'LOOKUP_PIN' was not declared in this scope
      auto bl = LOOKUP_PIN(DISPLAY_BL);
                                     ^
-make[2]: *** [CMakeFiles/MICROBIT.dir/pxtapp/screen---st7735/panic.cpp.o] Error 1
 make[2]: *** [CMakeFiles/MICROBIT.dir/pxtapp/screen---st7735/screen.cpp.o] Error 1
-make[2]: *** [CMakeFiles/MICROBIT.dir/pxtapp/screen---st7735/jddisplay.cpp.o] Error 1
 make[1]: *** [CMakeFiles/MICROBIT.dir/all] Error 2
-make: *** [all] Error 2
