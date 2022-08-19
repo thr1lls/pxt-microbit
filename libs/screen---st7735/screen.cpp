@@ -1,29 +1,29 @@
+#include "SPIScreenIO.h"
+
 #include "pxt.h"
 #include "ST7735.h"
 #include "ILI9341.h"
 
-#include "SPIScreenIO.h"
 #ifdef STM32F4
 #include "FSMCIO.h"
 #endif
 
 #include "jddisplay.h"
 
-#define LOOKUP_PIN(x)  X_PIN_ ## x
+#define LOOKUP_PIN(x) X_PIN_##x
 #define X_PIN_DISPLAY_MISO (&uBit.io.P14)
 #define X_PIN_DISPLAY_MOSI (&uBit.io.P15)
 #define X_PIN_DISPLAY_SCK (&uBit.io.P13)
 #define X_PIN_DISPLAY_BL (&uBit.io.P19)
 #define X_PIN_DISPLAY_RST (&uBit.io.P16)
 #define X_PIN_DISPLAY_DC (&uBit.io.P8)
-#define X_PIN_DISPLAY_CS ((codal::Pin*)NULL)
+#define X_PIN_DISPLAY_CS ((codal::Pin *)NULL)
 
 #define X_PIN_BTNMX_LATCH (&uBit.io.P9)
 #define X_PIN_BTNMX_CLOCK (&uBit.io.P20)
 #define X_PIN_BTNMX_DATA (&uBit.io.P14)
 
 #define CODAL_SPI NRF52SPI
-
 
 namespace pxt {
 
@@ -160,7 +160,22 @@ void disableButtonMultiplexer() {
         getMultiplexer()->disable();
     }
 }
+
+//% expose
+int pressureLevelByButtonId(int btnId, int codalId) {
+    return multiplexedButtonIsPressed(btnId) ? 512 : 0;
 }
+
+//% expose
+void setupButton(int buttonId, int key) {
+    int pin = getConfig(key);
+    if (pin == -1)
+        return;
+
+    registerMultiplexedButton(pin, buttonId);
+}
+
+} // namespace pxt
 
 namespace pxt {
 
