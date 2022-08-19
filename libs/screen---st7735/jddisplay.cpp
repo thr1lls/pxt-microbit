@@ -233,7 +233,7 @@ void JDDisplay::step() {
 
     memset(&sendFrame, 0, JD_SERIAL_FULL_HEADER_SIZE);
     sendFrame.crc = JDSPI_MAGIC;
-    sendFrame.device_identifier = pxt::getLongSerialNumber();
+    sendFrame.device_identifier = uBit.getSerialNumber();
 
     if (recvFrame.crc == JDSPI_MAGIC_NOOP) {
         // empty frame, skip
@@ -278,7 +278,7 @@ void JDDisplay::step() {
 
         if (soundServiceNum) {
             // we only need this for sending sound
-            uint32_t now = (uint32_t)current_time_us();
+            uint32_t now = (uint32_t)system_timer_current_time_us();
             if (lastFrameTimestamp) {
                 uint32_t thisFrame = now - lastFrameTimestamp;
                 avgFrameTime = (avgFrameTime * 15 + thisFrame) >> 4;

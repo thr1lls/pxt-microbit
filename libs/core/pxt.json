@@ -34,7 +34,7 @@
         "control.ts",
         "control.cpp",
         "controlInternal.cpp",
-        "eventContext.ts",
+        "eventcontext.ts",
         "controlgc.cpp",
         "perfcounters.ts",
         "interval.ts",

@@ -43,6 +43,18 @@ typedef MicroBitPin DevicePin;
 
 typedef RefMImage *Image;
 typedef RefImage *ImageG;
+typedef RefImage *ImageG_;
+
+
+#define DEVICE_ID_BUTTON_SLIDE 3000
+#define DEVICE_ID_MICROPHONE 3001
+#define DEVICE_ID_FIRST_BUTTON 4000
+#define DEVICE_ID_FIRST_TOUCHBUTTON 4100
+
+#define PXT_INTERNAL_KEY_UP 2050
+#define PXT_INTERNAL_KEY_DOWN 2051
+
+
 
 extern MicroBit uBit;
 extern MicroBitEvent lastEvent;
