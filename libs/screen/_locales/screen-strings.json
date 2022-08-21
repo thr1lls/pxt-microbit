@@ -31,6 +31,7 @@
   "{id:category}ScreenImage": "ScreenImage",
   "{id:category}Texteffects": "Texteffects",
   "{id:category}_helpers_workaround": "_helpers_workaround",
+  "{id:category}_screen_internal": "_screen_internal",
   "{id:group}Compare": "Compare",
   "{id:group}Create": "Create",
   "{id:group}Drawing": "Drawing",

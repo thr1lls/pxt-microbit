@@ -210,9 +210,9 @@ void ST7735::init() {
         busy_wait_us(20 * 1000);
     }
 
-    uint32_t cfg0 = getConfig(CFG_DISPLAY_CFG0, 0x40);
-    uint32_t frmctr1 = getConfig(CFG_DISPLAY_CFG1, 0x000603);
-    auto madctl = cfg0 & 0xff;
+    uint32_t cfg0 = 0x00000080; // getConfig(CFG_DISPLAY_CFG0, 0x40);
+    uint32_t frmctr1 = 0x00000603; // getConfig(CFG_DISPLAY_CFG1, 0x000603);
+    auto madctl = 0x00000080; // cfg0 & 0xff;
 
     sendCmdSeq(initCmds);
     configure(madctl, frmctr1);

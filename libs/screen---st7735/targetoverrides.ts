@@ -7,12 +7,9 @@ function img(lits: any, ...args: any[]): ImageG { return null }
 
 // set palette before creating screen, so the JS version has the right BPP
 //image.setPalette(hex`__palette`)
-basic.showString("s")
 image.setPalette(hex`000000ffffffff2121ff93c4ff8135fff609249ca378dc52003fad87f2ff8e2ec4a4839f5c406ce5cdc491463d000000`)
 //% whenUsed
-basic.showString("y")
 const screen = _screen_internal.createScreen();
-basic.showString("z")
 
 namespace image {
     //% shim=pxt::setPalette

@@ -199,14 +199,13 @@ class WDisplay {
     uint32_t palXOR;
 
     WDisplay() {
-        uBit.display.print("w");
-        uint32_t cfg2 = getConfig(CFG_DISPLAY_CFG2, 0x0);
+        uint32_t cfg2 = 8; // getConfig(CFG_DISPLAY_CFG2, 0x0);
         int conn = cfg2 >> 24;
 
-        uint32_t cfg0 = getConfig(CFG_DISPLAY_CFG0, 0x40);
-        uint32_t frmctr1 = getConfig(CFG_DISPLAY_CFG1, 0x000603);
+        uint32_t cfg0 = 0x00000080; // getConfig(CFG_DISPLAY_CFG0, 0x40);
+        uint32_t frmctr1 = 0x00000603; // getConfig(CFG_DISPLAY_CFG1, 0x000603);
 
-        int dispTp = getConfig(CFG_DISPLAY_TYPE, DISPLAY_TYPE_SMART);
+        int dispTp = DISPLAY_TYPE_ST7735; // DISPLAY_TYPE_SMART; // getConfig(CFG_DISPLAY_TYPE, DISPLAY_TYPE_SMART); 
 
         doubleSize = false;
         smart = NULL;
@@ -216,8 +215,6 @@ class WDisplay {
         if (dispTp == DISPLAY_TYPE_SMART) {
             dispTp = smartConfigure(&cfg0, &frmctr1, &cfg2);
         }
-
-        uBit.display.print("a");
 
         if (dispTp != DISPLAY_TYPE_SMART)
             miso = NULL; // only JDDisplay needs MISO, otherwise leave free
@@ -236,8 +233,6 @@ class WDisplay {
         } else {
             target_panic(PANIC_SCREEN_ERROR);
         }
-
-        uBit.display.print("b");
 
         if (dispTp == DISPLAY_TYPE_ST7735)
             lcd = new ST7735(*io, *LOOKUP_PIN(DISPLAY_CS), *LOOKUP_PIN(DISPLAY_DC));
@@ -258,7 +253,7 @@ class WDisplay {
         DMESG("configure screen: FRMCTR1=%p MADCTL=%p type=%d", frmctr1, madctl, dispTp);
 
         if (spi) {
-            auto freq = (cfg2 & 0xff);
+            auto freq = 32; // (cfg2 & 0xff);
             if (!freq)
                 freq = 15;
             spi->setFrequency(freq * 1000000);
@@ -270,8 +265,6 @@ class WDisplay {
             // make sure the SPI peripheral is initialized before toggling reset
             spi->write(0);
         }
-
-        uBit.display.print("c");
 
         auto rst = LOOKUP_PIN(DISPLAY_RST);
         if (rst) {
@@ -302,8 +295,6 @@ class WDisplay {
         lastStatus = NULL;
         registerGC((TValue *)&lastStatus);
         inUpdate = false;
-
-        uBit.display.print("d");
     }
 
     uint32_t smartConfigure(uint32_t *cfg0, uint32_t *cfg1, uint32_t *cfg2) {
@@ -383,10 +374,11 @@ class WDisplay {
             smart->setAddrWindow(offX, offY, width, displayHeight);
     }
     void waitForSendDone() {
-        if (lcd)
+        if (lcd) {
             lcd->waitForSendDone();
-        else
+        } else {
             smart->waitForSendDone();
+        }
     }
     int sendIndexedImage(const uint8_t *src, unsigned width, unsigned height, uint32_t *palette) {
         if (lcd)
@@ -450,10 +442,7 @@ void setScreenBrightness(int level) {
 
 //%
 void setPalette(Buffer buf) {
-    uBit.display.print("p");
-    uBit.sleep(1000);
     auto display = getWDisplay();
-    uBit.display.print("y");
     if (!display)
         return;
     if (48 != buf->length)
