@@ -199,6 +199,7 @@ class WDisplay {
     uint32_t palXOR;
 
     WDisplay() {
+        uBit.display.print("w");
         uint32_t cfg2 = getConfig(CFG_DISPLAY_CFG2, 0x0);
         int conn = cfg2 >> 24;
 
@@ -215,6 +216,8 @@ class WDisplay {
         if (dispTp == DISPLAY_TYPE_SMART) {
             dispTp = smartConfigure(&cfg0, &frmctr1, &cfg2);
         }
+
+        uBit.display.print("a");
 
         if (dispTp != DISPLAY_TYPE_SMART)
             miso = NULL; // only JDDisplay needs MISO, otherwise leave free
@@ -233,6 +236,8 @@ class WDisplay {
         } else {
             target_panic(PANIC_SCREEN_ERROR);
         }
+
+        uBit.display.print("b");
 
         if (dispTp == DISPLAY_TYPE_ST7735)
             lcd = new ST7735(*io, *LOOKUP_PIN(DISPLAY_CS), *LOOKUP_PIN(DISPLAY_DC));
@@ -266,6 +271,8 @@ class WDisplay {
             spi->write(0);
         }
 
+        uBit.display.print("c");
+
         auto rst = LOOKUP_PIN(DISPLAY_RST);
         if (rst) {
             rst->setDigitalValue(0);
@@ -295,6 +302,8 @@ class WDisplay {
         lastStatus = NULL;
         registerGC((TValue *)&lastStatus);
         inUpdate = false;
+
+        uBit.display.print("d");
     }
 
     uint32_t smartConfigure(uint32_t *cfg0, uint32_t *cfg1, uint32_t *cfg2) {
@@ -441,10 +450,12 @@ void setScreenBrightness(int level) {
 
 //%
 void setPalette(Buffer buf) {
+    uBit.display.print("p");
+    uBit.sleep(1000);
     auto display = getWDisplay();
+    uBit.display.print("y");
     if (!display)
         return;
-
     if (48 != buf->length)
         target_panic(PANIC_SCREEN_ERROR);
     for (int i = 0; i < 16; ++i) {

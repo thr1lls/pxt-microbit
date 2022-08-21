@@ -40,6 +40,5 @@
   "image.screenImage": "Get the screen image",
   "images": "Creation, manipulation and display of LED images.\n\nImage manipulation blocks",
   "images._image": "An image",
-  "images._image|param|image": "the image",
-  "img": "Tagged image literal converter"
+  "images._image|param|image": "the image"
 }
