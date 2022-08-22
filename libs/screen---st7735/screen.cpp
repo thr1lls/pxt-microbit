@@ -15,11 +15,11 @@
 
 #define CODAL_SPI NRF52SPI
 
-extern uint32_t readButtonMultiplexer(int bits);
-
 namespace pxt {
 
-int waitForScreen() {
+uint32_t readButtonMultiplexer(int bits);
+
+uint32_t waitForScreen() {
     uint32_t hc;
 
     // wait while nothing is connected
