@@ -7,12 +7,42 @@
 
 namespace pxt {
 
+#define IS_3_3_V() ((NRF_UICR->REGOUT0 & 7) == 5)
+
+// this is needed when P0_9 and P0_10 are to be used as regular pins
+static void disableNFConPins() {
+    // Ensure NFC pins are configured as GPIO. If not, update the non-volatile UICR.
+    if (NRF_UICR->NFCPINS || !IS_3_3_V()) {
+        DMESG("RESET UICR\n");
+        // Enable Flash Writes
+        NRF_NVMC->CONFIG = (NVMC_CONFIG_WEN_Wen << NVMC_CONFIG_WEN_Pos);
+        while (NRF_NVMC->READY == NVMC_READY_READY_Busy)
+            ;
+
+        // Configure PINS for GPIO use.
+        if (NRF_UICR->NFCPINS)
+            NRF_UICR->NFCPINS = 0;
+
+#if defined(NRF52840) || defined(NRF52833)
+        // Set VDD to 3.3V
+        if ((NRF_UICR->REGOUT0 & 7) != 5)
+            NRF_UICR->REGOUT0 = (NRF_UICR->REGOUT0 & ~7) | 5;
+#endif
+
+        // Disable Flash Writes
+        NRF_NVMC->CONFIG = (NVMC_CONFIG_WEN_Ren << NVMC_CONFIG_WEN_Pos);
+        while (NRF_NVMC->READY == NVMC_READY_READY_Busy)
+            ;
+
+        // Reset, so the changes can take effect.
+        NVIC_SystemReset();
+    }
+}
+
 static void waitABit() {
     // for (int i = 0; i < 10; ++i)
     //    asm volatile("nop");
 }
-
-static char bitToChar[11] = "0123456789";
 
 class ButtonMultiplexer : public CodalComponent {
   public:
@@ -29,6 +59,8 @@ class ButtonMultiplexer : public CodalComponent {
           data(*LOOKUP_PIN(BTNMX_DATA)) {
         this->id = id;
         this->status |= DEVICE_COMPONENT_STATUS_SYSTEM_TICK;
+
+        disableNFConPins();
 
         state = 0;
         invMask = 0;
