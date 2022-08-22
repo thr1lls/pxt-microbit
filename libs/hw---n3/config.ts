@@ -1,10 +1,12 @@
 // there's no UF2 bootloader for 52833 yet, so we specify example configuration here
 namespace config {
-    /*
-    export const PIN_BTNMX_LATCH = DAL.P0_9
-    export const PIN_BTNMX_CLOCK = DAL.P1_0
-    export const PIN_BTNMX_DATA = DAL.P0_1
+
+/*
+    export const PIN_BTNMX_LATCH = DAL.P0_9 -> P9
+    export const PIN_BTNMX_CLOCK = DAL.P1_0 -> P20
+    export const PIN_BTNMX_DATA = DAL.P0_1 -> P14
 */
+
 
     // pybadge-like layout
     export const PIN_BTN_LEFT = 1050
