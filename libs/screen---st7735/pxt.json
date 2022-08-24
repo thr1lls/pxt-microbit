@@ -16,10 +16,7 @@
         "pxtparts.json",
         "imagesoverrides.jres",
         "imagesoverrides.ts",
-        "font12.jres",
-        "arcadegamepad.h",
-        "indexedscreen.h",
-        "arcadesound.h"
+        "font12.jres"
     ],
     "dependencies": {
         "core": "file:../core"

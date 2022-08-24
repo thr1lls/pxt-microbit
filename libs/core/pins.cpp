@@ -523,7 +523,7 @@ namespace pins {
     Buffer i2cReadBuffer(int address, int size, bool repeat = false)
     {
       Buffer buf = createBuffer(size);
-      uBit.i2c.read(address << 1, (BUFFER_TYPE)buf->data, size, repeat);
+      // uBit.i2c.read(address << 1, (BUFFER_TYPE)buf->data, size, repeat);
       return buf;
     }
 
@@ -533,7 +533,7 @@ namespace pins {
     //%
     int i2cWriteBuffer(int address, Buffer buf, bool repeat = false)
     {
-      return uBit.i2c.write(address << 1, (BUFFER_TYPE)buf->data, buf->length, repeat);
+      return 0; // uBit.i2c.write(address << 1, (BUFFER_TYPE)buf->data, buf->length, repeat);
     }
 
     SPI* spi = NULL;

@@ -1,4 +1,5 @@
 #include "pxt.h"
+
 #include <stdarg.h>
 
 PXT_ABI(__aeabi_dadd)
@@ -42,6 +43,7 @@ extern "C" void target_reset() {
 #endif
 
 uint32_t device_heap_size(uint8_t heap_index); // defined in microbit-dal
+
 
 namespace pxt {
 
@@ -151,6 +153,8 @@ void runInParallel(Action a) {
 void waitForEvent(int id, int event) {
     fiber_wait_for_event(id, event);
 }
+
+
 
 void initRuntime() {
     initCodal();

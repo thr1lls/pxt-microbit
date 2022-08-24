@@ -2,7 +2,7 @@
 namespace config {
 
 /*
-    export const PIN_BTNMX_LATCH = DAL.P0_9 -> P9
+    export const PIN_BTNMX_LATCH = DAL.P0_9 -> P9   -> [shared with LED screen]
     export const PIN_BTNMX_CLOCK = DAL.P1_0 -> P20
     export const PIN_BTNMX_DATA = DAL.P0_1 -> P14
 */
@@ -23,7 +23,7 @@ namespace config {
     export const PIN_DISPLAY_MOSI = DAL.P0_13
     export const PIN_DISPLAY_MISO = DAL.P0_1
     export const PIN_DISPLAY_BL = DAL.P0_26
-    export const PIN_DISPLAY_DC = DAL.P0_10
+    export const PIN_DISPLAY_DC = DAL.P0_10   -> [shared with LED screen???]
     export const PIN_DISPLAY_RST = DAL.P1_2
 
     // Jacdac, when jacdaptor is connected, is on the accessibility pin (P12)

@@ -9,7 +9,6 @@ namespace pxt {
 
 #define IS_3_3_V() ((NRF_UICR->REGOUT0 & 7) == 5)
 
-// this is needed when P0_9 and P0_10 are to be used as regular pins
 static void disableNFConPins() {
     // Ensure NFC pins are configured as GPIO. If not, update the non-volatile UICR.
     if (NRF_UICR->NFCPINS || !IS_3_3_V()) {
@@ -23,11 +22,9 @@ static void disableNFConPins() {
         if (NRF_UICR->NFCPINS)
             NRF_UICR->NFCPINS = 0;
 
-#if defined(NRF52840) || defined(NRF52833)
         // Set VDD to 3.3V
         if ((NRF_UICR->REGOUT0 & 7) != 5)
             NRF_UICR->REGOUT0 = (NRF_UICR->REGOUT0 & ~7) | 5;
-#endif
 
         // Disable Flash Writes
         NRF_NVMC->CONFIG = (NVMC_CONFIG_WEN_Ren << NVMC_CONFIG_WEN_Pos);
@@ -60,17 +57,17 @@ class ButtonMultiplexer : public CodalComponent {
         this->id = id;
         this->status |= DEVICE_COMPONENT_STATUS_SYSTEM_TICK;
 
-        disableNFConPins();
-
         state = 0;
         invMask = 0;
-        enabled = true;
 
         memset(buttonIdPerBit, 0, sizeof(buttonIdPerBit));
 
+        disableNFConPins();
+        
         data.getDigitalValue(PullMode::Down);
         latch.setDigitalValue(1);
         clock.setDigitalValue(1);
+        enabled = true;
     }
 
     void disable() {
