@@ -12,8 +12,7 @@
     "hidden": true,
     "public": true,
     "dependencies": {
-        "core": "file:../core",
-        "bluetooth": "file:../bluetooth"
+        "core": "file:../core"
     },
     "installedVersion": "ljipgq"
 }

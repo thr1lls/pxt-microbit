@@ -9,13 +9,8 @@
         "libs/core",
         "libs/radio",
         "libs/devices",
-        "libs/bluetooth",
-        "libs/servo",
         "libs/radio-broadcast",
-        "libs/microphone",
         "libs/settings",
-        "libs/flashlog",
-        "libs/datalogger",
         "libs/color",
         "libs/screen",
         "libs/screen---st7735",
@@ -178,7 +173,7 @@
                 "codalTarget": {
                     "name": "codal-microbit-v2",
                     "url": "https://github.com/tballmsft/codal-microbit-v2",
-                    "branch": "master",
+                    "branch": "BLE",
                     "type": "git"
                 },
                 "codalBinary": "MICROBIT",

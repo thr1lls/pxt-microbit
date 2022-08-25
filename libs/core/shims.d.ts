@@ -647,55 +647,6 @@ declare namespace led {
     //% parts="ledmatrix" shim=led::screenshot
     function screenshot(): Image;
 }
-declare namespace music {
-
-    /**
-     * Set the default output volume of the sound synthesizer.
-     * @param volume the volume 0...255
-     */
-    //% blockId=synth_set_volume block="set volume %volume"
-    //% volume.min=0 volume.max=255
-    //%
-    //% help=music/set-volume
-    //% weight=70
-    //% group="Volume"
-    //% blockGap=8 volume.defl=127 shim=music::setVolume
-    function setVolume(volume?: int32): void;
-
-    /**
-     * Returns the current output volume of the sound synthesizer.
-     */
-    //% blockId=synth_get_volume block="volume"
-    //% help=music/volume
-    //% weight=69
-    //% group="Volume"
-    //% blockGap=8 shim=music::volume
-    function volume(): int32;
-
-    /**
-     * Turn the built-in speaker on or off.
-     * Disabling the speaker resets the sound pin to the default of P0.
-     * @param enabled whether the built-in speaker is enabled in addition to the sound pin
-     */
-    //% blockId=music_set_built_in_speaker_enable block="set built-in speaker $enabled"
-    //% group="micro:bit (V2)"
-    //% parts=builtinspeaker
-    //% help=music/set-built-in-speaker-enabled
-    //% enabled.shadow=toggleOnOff
-    //% weight=0 shim=music::setBuiltInSpeakerEnabled
-    function setBuiltInSpeakerEnabled(enabled: boolean): void;
-
-    /**
-     * Defines an optional sample level to generate during periods of silence.
-     **/
-    //% group="micro:bit (V2)"
-    //% help=music/set-silence-level
-    //% level.min=0
-    //% level.max=1024
-    //%
-    //% weight=1 level.defl=0 shim=music::setSilenceLevel
-    function setSilenceLevel(level?: int32): void;
-}
 declare namespace pins {
 
     /**
@@ -1243,27 +1194,6 @@ declare namespace control {
     //% deprecated=1 shim=control::createBufferFromUTF8
     function createBufferFromUTF8(str: string): Buffer;
 }
-declare namespace light {
-
-    /**
-     * Sends a color buffer to a light strip
-     **/
-    //% advanced=true shim=light::sendWS2812Buffer
-    function sendWS2812Buffer(buf: Buffer, pin: int32): void;
-
-    /**
-     * Sends a color buffer to a light strip
-     **/
-    //% advanced=true shim=light::sendWS2812BufferWithBrightness
-    function sendWS2812BufferWithBrightness(buf: Buffer, pin: int32, brightness: int32): void;
-
-    /**
-     * Sets the light mode of a pin
-     **/
-    //% advanced=true
-    //% shim=light::setMode
-    function setMode(pin: int32, mode: int32): void;
-}
 declare namespace input {
 
     /**
@@ -1287,36 +1217,6 @@ declare namespace input {
     //% parts="logotouch"
     //% help="input/logo-is-pressed" shim=input::logoIsPressed
     function logoIsPressed(): boolean;
-}
-declare namespace pins {
-
-    /**
-     * Configure the touch detection for the pins and logo.
-     * P0, P1, P2 use resistive touch by default.
-     * The logo uses capacitative touch by default.
-     * @param name target to change the touch mode for
-     * @param mode the touch mode to use
-     */
-    //% weight=60
-    //% blockId=device_touch_set_type block="set %name to touch mode %mode"
-    //% advanced=true
-    //% group="micro:bit (V2)"
-    //% help=pins/touch-set-mode shim=pins::touchSetMode
-    function touchSetMode(name: TouchTarget, mode: TouchTargetMode): void;
-}
-declare namespace music {
-
-    /**
-     * Internal use only
-     **/
-    //% async shim=music::__playSoundExpression
-    function __playSoundExpression(nodes: string, waitTillDone: boolean): void;
-
-    /**
-     * Internal use only
-     */
-    //% shim=music::__stopSoundExpressions
-    function __stopSoundExpressions(): void;
 }
 
 // Auto-generated. Do not edit. Really.

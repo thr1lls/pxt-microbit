@@ -1,5 +1,12 @@
 {
-    "additionalFilePath": "../../node_modules/pxt-common-packages/libs/microphone",
+    "name": "microphone",
+    "description": "The microphone library",
+    "files": [
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true,
     "dependencies": {
         "core": "file:../core"
     }

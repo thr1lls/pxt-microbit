@@ -28,7 +28,7 @@
   "controller.setRepeatDefault": "Configures the timing of the on button repeat event for all of the controller buttons",
   "controller.setRepeatDefault|param|delay": "number of milliseconds from when the button is pressed to when the repeat event starts firing, eg: 500",
   "controller.setRepeatDefault|param|interval": "minimum number of milliseconds between calls to the button repeat event, eg: 30",
-  "game": "A single-LED sprite game engine\n\nGame transitions and dialog",
+  "game": "Game transitions and dialog",
   "game.onPaint": "Draw on screen before sprites, after background",
   "game.onShade": "Draw on screen after sprites",
   "game.onUpdate": "Update the position and velocities of sprites",
