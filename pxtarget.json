@@ -48,9 +48,9 @@
         "driveName": "MICROBIT",
         "hexMimeType": "application/x-microbit-hex",
         "openocdScript": "source [find interface/cmsis-dap.cfg]; source [find target/nrf51.cfg]",
-        "flashUsableEnd": 242688,
-        "flashEnd": 242688,
-        "flashCodeAlign": 1024,
+        "flashCodeAlign": 4096,
+        "flashUsableEnd": 487424,
+        "flashEnd": 524288,
         "floatingPoint": true,
         "taggedInts": true,
         "utf8": false,
@@ -145,18 +145,20 @@
         "useNewFunctions": true
     },
     "compileService": {
-        "yottaTarget": "bbc-microbit-classic-gcc@https://github.com/lancaster-university/yotta-target-bbc-microbit-classic-gcc",
-        "yottaCorePackage": "microbit",
-        "githubCorePackage": "lancaster-university/microbit",
-        "gittag": "v2.2.0-rc6",
-        "serviceId": "microbit",
-        "dockerImage": "pext/yotta:latest"
+        "buildEngine": "codal",
+        "codalTarget": {
+            "name": "codal-microbit-v2",
+            "url": "https://github.com/tballmsft/codal-microbit-v2",
+            "branch": "BLE",
+            "type": "git"
+        },
+        "codalBinary": "MICROBIT",
+        "githubCorePackage": "lancaster-university/microbit-v2-samples",
+        "gittag": "v0.2.11",
+        "serviceId": "mbcodal2",
+        "dockerImage": "pext/yotta:latest",
+        "yottaConfigCompatibility": true
     },
-    "multiVariants": [
-        "mbdal",
-        "mbcodal"
-    ],
-    "alwaysMultiVariant" : true,
     "variants": {
         "mbdal": {
             "compile": {},
