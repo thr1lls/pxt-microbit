@@ -10,9 +10,12 @@ namespace pxt {
 void debuglog(const char *format, ...);
 }
 
-// #define GC_GET_HEAP_SIZE() device_heap_size(0)
-#define xmalloc malloc
-#define xfree free
+#define GC_GET_HEAP_SIZE() device_heap_size(0)
+#define GC_STACK_BASE DEVICE_STACK_BASE
+#define xmalloc device_malloc
+#define xfree device_free
+
+
 
 // #define GC_MAX_ALLOC_SIZE 9000
 #define GC_MAX_ALLOC_SIZE (128 * 1024)
