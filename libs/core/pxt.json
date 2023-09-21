@@ -1,6 +1,14 @@
 {
     "name": "core",
     "description": "The microbit core library",
+    "microbit": {
+        "config": {
+            "DMESG_ENABLE": 1,
+            "DEVICE_DMESG_BUFFER_SIZE": 1024,
+            "DMESG_SERIAL_DEBUG": 1,
+            "CODAL_DEBUG": 1
+        }
+    },
     "additionalFilePath": "../../node_modules/pxt-common-packages/libs/base",
     "files": [
         "README.md",
