@@ -228,6 +228,17 @@ namespace control {
     }
 
     /**
+     * CODAL Heap Debug Output
+     */
+    void printCodalHeap() {
+        #if MICROBIT_CODAL && CODAL_DEBUG > 0
+            device_heap_print();
+        #else
+            dmesg( "CODAL debug disabled." );
+        #endif
+    }
+
+    /**
     * Gets the number of milliseconds elapsed since power on.
     */
     //% help=control/millis weight=50
