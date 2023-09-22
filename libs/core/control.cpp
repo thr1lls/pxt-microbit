@@ -233,8 +233,6 @@ namespace control {
     void printCodalHeap() {
         #if MICROBIT_CODAL && CODAL_DEBUG > 0
             device_heap_print();
-        #else
-            dmesg( "CODAL debug disabled." );
         #endif
     }
 
