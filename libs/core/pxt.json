@@ -110,7 +110,7 @@
             "DMESG_SERIAL_DEBUG": 1,
             "CODAL_DEBUG": 1,
             "CODAL_DEFAULT_STREAM_RECORDING_MAX_LENGTH": 60000,
-            "CODAL_DEBUG_HEAP": 1
+            "CODAL_DEBUG_HEAP": 3
         },
         "optionalConfig": {
             "microbit-dal": {
