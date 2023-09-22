@@ -108,9 +108,8 @@
             "DMESG_ENABLE": 1,
             "DEVICE_DMESG_BUFFER_SIZE": 1024,
             "DMESG_SERIAL_DEBUG": 1,
-            "CODAL_DEBUG": 1,
-            "CODAL_DEFAULT_STREAM_RECORDING_MAX_LENGTH": 60000,
-            "CODAL_DEBUG_HEAP": 3
+            "CODAL_DEBUG": 3,
+            "CODAL_DEFAULT_STREAM_RECORDING_MAX_LENGTH": 60000
         },
         "optionalConfig": {
             "microbit-dal": {
