@@ -105,10 +105,10 @@
                 "fiber_user_data": 1,
                 "pxt": 1
             },
-            "DMESG_ENABLE": 1,
-            "DEVICE_DMESG_BUFFER_SIZE": 1024,
-            "DMESG_SERIAL_DEBUG": 1,
-            "CODAL_DEBUG": 1,
+            "DMESG_ENABLE": 0,
+            "DEVICE_DMESG_BUFFER_SIZE": 0,
+            "DMESG_SERIAL_DEBUG": 0,
+            "CODAL_DEBUG": 0,
             "CODAL_DEFAULT_STREAM_RECORDING_MAX_LENGTH": 60000
         },
         "optionalConfig": {
