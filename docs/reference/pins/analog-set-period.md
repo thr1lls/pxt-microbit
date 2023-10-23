@@ -1,6 +1,6 @@
 # Analog Set Period
 
-Configure the period of Pulse Width Modulation (PWM) on the specified 
+Configure the period of pulse-width modulation (PWM) on the specified 
 analog [pin](/device/pins).
 Before you call this function, you should set the specified pin as analog.
 

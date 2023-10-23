@@ -1,6 +1,6 @@
 # Analog Pitch
 
-Emits a Pulse With Modulation (PWM) signal to the pin ``P0``.
+Sends a pulse-width modulation (PWM) signal to the pin ``P0``.
 Use [analog set pitch pin](/reference/pins/analog-set-pitch-pin) to set the current pitch pin.
 
 ```sig
@@ -9,10 +9,12 @@ pins.analogPitch(440, 300)
 
 ## Parameters
 
-* `frequency` : [Number](/types/number)
-* `ms`: [Number](/types/number)
+* **frequency**: a [number](/types/number) which is the frequency of the PWM signal at the pitch pin.
+* **ms**: a [number](/types/number) in milliseconds that is the duration of the signal at the pitch pin.
 
 ## Example
+
+Set the pitch pin to `P1` and send a 440 Hz tone for 1 second.
 
 ```blocks
 pins.analogSetPitchPin(AnalogPin.P0);
