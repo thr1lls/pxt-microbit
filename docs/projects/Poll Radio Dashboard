@@ -1,0 +1,96 @@
+/**
+ * Poll Radio Dashboard
+ * (Adapted from docs/examples/radio-dashboard.md)
+ * 
+ * Each radio client is represented by a dot on the screen.
+ * Once a client is registered, it will stay at the same pixel location
+ * forever.
+ * 
+ * Radio clients can simply send a string (A,B,C,D) on group 4.
+ * They must transmit the serial number using ``radio.setTransmitSerialNumber(true)``
+ * 
+ * The received string is used to set the LED response for that client.
+ */
+const lostPing = 50000;
+
+interface Client {
+    // client serial id
+    id: number;
+    // sprite on screen
+    sprite: game.LedSprite;
+    // last ping received
+    ping: number;
+}
+
+const clients: Client[] = [];
+
+/* lazy allocate sprite */
+function getClient(id: number): Client {
+    // needs an id to track radio client's identity
+    if (!id)
+        return undefined;
+
+    // look for cached clients
+    for (const client of clients)
+        if (client.id == id)
+            return client;
+    const n = clients.length;
+    if (n == 24) // out of pixels
+        return undefined;
+    const client: Client = {
+        id: id,
+        sprite: game.createSprite(n % 5, n / 5),
+        ping: input.runningTime(), // initialize ping time
+    }
+    clients.push(client);
+    return client;
+}
+
+// store data received by clients
+radio.onReceivedNumber(function (receivedNumber) {
+    const serialNumber = radio.receivedPacket(RadioPacketProperty.SerialNumber)
+    const client = getClient(serialNumber);
+    if (!client)
+        return;
+
+    // Update the ping time when a packet is received
+    client.ping = input.runningTime();
+
+    // Process other data as needed
+})
+
+// setup the radio and start!
+radio.setGroup(4)
+game.addScore(1)
+
+// Function to perform actions when a button press is received
+radio.onReceivedString(function (receivedString) {
+    for (const client of clients) {
+        if (receivedString == "A") {
+            client.sprite.setBrightness(25);
+            client.sprite.setBlink(0);
+        } else if (receivedString == "B") {
+            client.sprite.setBrightness(255);
+            client.sprite.setBlink(0);
+        } else if (receivedString == "C") {
+            client.sprite.setBrightness(175);
+            client.sprite.setBlink(500);
+        } else if (receivedString == "D") {
+            client.sprite.setBrightness(3);
+            client.sprite.setBlink(0);
+        }
+    }
+})
+
+// monitor the sprites and turn off when no packet is received
+basic.forever(() => {
+    const now = input.runningTime()
+    for (const client of clients) {
+        // lost signal turns off
+        const lastPing = now - client.ping;
+        if (lastPing > lostPing) {
+            client.sprite.setBrightness(0);
+        }
+    }
+    basic.pause(100)
+})
