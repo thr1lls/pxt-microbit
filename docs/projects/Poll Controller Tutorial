@@ -38,6 +38,7 @@ Drag ``||basic:show leds||`` underneath ``||radio:radio send string [C]||`` and 
 ## Step 8: Setup the final "button"
 Our final trigger will be a "reset" using the shake function.
 Drag ``||input:on [shake]||`` onto the workspace.
+Drag ``||radio:radio send number []||`` into ``||input:on [shake]||`` and set it to 35.
 Drag ``||radio:radio send string []||`` into ``||input:on [shake]||`` and set it to "D".
 Drag ``||basic:show icon []||`` underneath ``||radio:radio send string [D]||`` and select the icon of your choice.
 
