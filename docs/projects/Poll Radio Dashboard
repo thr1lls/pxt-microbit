@@ -1,4 +1,4 @@
-/**
+ /**
  * Poll Radio Dashboard
  * (Adapted from docs/examples/radio-dashboard.md)
  * 
@@ -11,7 +11,7 @@
  * 
  * The received string is used to set the LED response for that client.
  */
-const lostPing = 50000;
+const lostPing = 10000;
 
 interface Client {
     // client serial id
@@ -40,7 +40,7 @@ function getClient(id: number): Client {
     const client: Client = {
         id: id,
         sprite: game.createSprite(n % 5, n / 5),
-        ping: input.runningTime(), // initialize ping time
+        ping: input.runningTime()
     }
     clients.push(client);
     return client;
@@ -55,30 +55,31 @@ radio.onReceivedNumber(function (receivedNumber) {
 
     // Update the ping time when a packet is received
     client.ping = input.runningTime();
-
-    // Process other data as needed
 })
-
-// setup the radio and start!
-radio.setGroup(4)
-game.addScore(1)
 
 // Function to perform actions when a button press is received
 radio.onReceivedString(function (receivedString) {
-    for (const client of clients) {
-        if (receivedString == "A") {
-            client.sprite.setBrightness(25);
-            client.sprite.setBlink(0);
-        } else if (receivedString == "B") {
-            client.sprite.setBrightness(255);
-            client.sprite.setBlink(0);
-        } else if (receivedString == "C") {
-            client.sprite.setBrightness(175);
-            client.sprite.setBlink(500);
-        } else if (receivedString == "D") {
-            client.sprite.setBrightness(3);
-            client.sprite.setBlink(0);
-        }
+    const serialNumber = radio.receivedPacket(RadioPacketProperty.SerialNumber)
+    const client = getClient(serialNumber);
+    if (!client)
+        return;
+
+    // Update the ping time when a packet is received
+    client.ping = input.runningTime();
+
+    // Adjust LED properties based on the received string for the specific client
+    if (receivedString == "A") {
+        client.sprite.setBrightness(25);
+        client.sprite.setBlink(0);
+    } else if (receivedString == "B") {
+        client.sprite.setBrightness(255);
+        client.sprite.setBlink(0);
+    } else if (receivedString == "C") {
+        client.sprite.setBrightness(175);
+        client.sprite.setBlink(500);
+    } else if (receivedString == "D") {
+        client.sprite.setBrightness(3);
+        client.sprite.setBlink(0);
     }
 })
 
@@ -94,3 +95,7 @@ basic.forever(() => {
     }
     basic.pause(100)
 })
+
+// setup the radio and start!
+radio.setGroup(4)
+game.addScore(1)
