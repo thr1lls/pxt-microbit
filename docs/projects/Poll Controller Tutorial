@@ -13,8 +13,8 @@ Ensure it is set to "true".
     
 ## Step 3: Maintain the radio connection
 Now we want the micro:bit to continuously transmit this data to maintain the connection.
-Drag ``||loops:every (500)ms||`` onto the workspace and set it to 40000ms.
-Drag ``||radio:radio set transmit serial number||`` into ``||loops:every (40000)ms||``.
+Drag ``||loops:every (500)ms||`` onto the workspace and set it to 5000ms.
+Drag ``||radio:radio send number []||`` into ``||loops:every (5000)ms||`` and set it to 35.
 
 ## Step 4: Setup a button
 Now let's setup what our buttons will do.
@@ -45,4 +45,4 @@ Drag ``||basic:show icon []||`` underneath ``||radio:radio send string [D]||`` a
 ## Step 9: Finalize
 Connect your micro:bit and click "Download" to install the program.
 
-Go to https://github.com/thr1lls/pxt-microbit/blob/537d29efd979275e6c9340359c97d326893b6004/docs/projects/Poll%20Radio%20Dashboard for code to setup the receiver micro:bit.
+Go to https://github.com/thr1lls/pxt-microbit/blob/f19750f72bc2abb94eed7d51ba5707aba9cf69bb/docs/projects/Poll%20Radio%20Dashboard for code to setup the receiver micro:bit.
